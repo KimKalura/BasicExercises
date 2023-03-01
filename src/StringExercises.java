@@ -21,13 +21,14 @@ public class StringExercises {
         Scanner console = new Scanner(System.in);
         System.out.print("Enter a word to check if it is a palindrome or not: ");
         String word = console.nextLine();
-        String reversed = "";
+        boolean isPalindrom = false;
+        String reversedString = "";
 
         for (int i = word.length() - 1; i >= 0; i--) {
-            reversed = reversed + word.charAt(i);
+            reversedString = reversedString + word.charAt(i);
         }
-        if (word.equals(reversed)) {
-            boolean answer = true;
+        if (word.equals(reversedString)) {
+            isPalindrom = true;
             System.out.println("The word entered is a palindrome.");
         } else {
             System.out.println("The word entered is not a palindrome.");
@@ -43,18 +44,15 @@ public class StringExercises {
         int num = 0;
         int other = 0;
 
-        for(int i = 0; i < phrase.length(); i++){
-            if(Character.isLetter(ch[i])){
-                letter ++ ;
-            }
-            else if(Character.isDigit(ch[i])){
-                num ++ ;
-            }
-            else if(Character.isSpaceChar(ch[i])){
-                space ++ ;
-            }
-            else{
-                other ++;
+        for (int i = 0; i < phrase.length(); i++) {
+            if (Character.isLetter(ch[i])) {
+                letter++;
+            } else if (Character.isDigit(ch[i])) {
+                num++;
+            } else if (Character.isSpaceChar(ch[i])) {
+                space++;
+            } else {
+                other++;
             }
         }
         System.out.println(letter + " letters");
@@ -75,7 +73,7 @@ public class StringExercises {
         String password = console.nextLine();
         int countDigits = 0;
 
-        if(password.length() < 10) {
+        if (password.length() < 10) {
             System.out.println("The password is too short");
             return false;
         }
